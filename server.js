@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 
@@ -58,7 +58,7 @@ app.put('/todo/complete/:id', async (req, res) => {
 // 	res.json(todo);
 // });
 
-// app.listen(3001, ()=>console.log("server started"));
-app.listen(PORT,()=>{
-	console.log(`server is running at ${PORT}`)
-})
+app.listen(3001, ()=>console.log("server started"));
+// app.listen(PORT,()=>{
+// 	console.log(`server is running at ${PORT}`)
+// })
