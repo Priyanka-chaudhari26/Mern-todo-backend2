@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const app = express();
-// const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
+require('dotenv').config();
 
 
-mongoose.connect('mongodb+srv://Priyankamern:26102000@cluster0.xfqjvgx.mongodb.net/test', {
+mongoose.connect(process.env.DB_URL, {
 	
 useNewUrlParser: true, 
 	useUnifiedTopology: true 
@@ -48,7 +48,7 @@ app.put('/todo/complete/:id', async (req, res) => {
 	res.json(todo);
 })
 
-app.listen('https://priyanka-mern-backend.onrender.com', ()=>console.log("server started"));
-// app.listen(PORT,()=>{
-// 	console.log(`server is running at ${PORT}`)
-// })
+// app.listen('https://priyanka-mern-backend.onrender.com', ()=>console.log("server started"));
+app.listen(PORT,()=>{
+	console.log(`server is running at ${PORT}`)
+})
