@@ -48,17 +48,7 @@ app.put('/todo/complete/:id', async (req, res) => {
 	res.json(todo);
 })
 
-// app.put('/todo/update/:id', async (req, res) => {
-// 	const todo = await Todo.findById(req.params.id);
-
-// 	todo.text = req.body.text;
-
-// 	todo.save();
-
-// 	res.json(todo);
-// });
-
-app.listen('https://priyanka-mern-backend.onrender.com/', ()=>console.log("server started"));
+app.listen('https://priyanka-mern-backend.onrender.com', ()=>console.log("server started"));
 // app.listen(PORT,()=>{
 // 	console.log(`server is running at ${PORT}`)
 // })
